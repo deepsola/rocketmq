@@ -144,6 +144,7 @@ jobs:
           include_passed: true
           detailed_summary: true
       - uses: actions/upload-artifact@v3
+        if: always()
         name: Upload test log
         with:
           name: testlog.txt
