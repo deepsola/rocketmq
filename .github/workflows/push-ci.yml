@@ -143,6 +143,11 @@ jobs:
           annotate_only: true
           include_passed: true
           detailed_summary: true
+      - uses: actions/upload-artifact@v3
+        name: Upload test log
+        with:
+          name: testlog.txt
+          path: testlog.txt
 
   clean:
     if: always()
