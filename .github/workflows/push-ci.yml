@@ -2,6 +2,7 @@ name: PUSH-CI
 
 on:
   push:
+    branches: [ci-remove-unit-test]
   #schedule:
   #  - cron: "0 18 * * *" # TimeZone: UTC 0
 
