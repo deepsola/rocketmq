@@ -47,7 +47,7 @@ jobs:
           ls
       - uses: actions/checkout@v3
         with:
-          repository: cryptoya/rocketmq-docker.git
+          repository: apache/rocketmq-docker.git
           ref: master
           path: rocketmq-docker
       - name: Build and save docker images
@@ -136,6 +136,13 @@ jobs:
           annotate_only: true
           include_passed: true
           detailed_summary: true
+      - uses: actions/upload-artifact@v3
+        if: always()
+        name: Upload test log
+        with:
+          name: testlog.txt
+          path: testlog.txt
+
 
   clean:
     if: always()
