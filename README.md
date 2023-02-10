@@ -18,7 +18,7 @@ It offers a variety of features:
 * Financial grade transactional message
 * Built-in fault tolerance and high availability configuration options base on [DLedger Controller](docs/cn/controller/quick_start.md)
 * Built-in message tracing capability, also support opentracing
-* Versatile big-data and streaming ecosystem integration
+* Versatile big-data and streaming ecosystem integration 
 * Message retroactivity by time or offset
 * Reliable FIFO and strict ordered messaging in the same queue
 * Efficient pull and push consumption model
