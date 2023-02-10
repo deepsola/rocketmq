@@ -109,7 +109,7 @@ jobs:
           test-version: "${{ matrix.version }}"
           docker-repo-username: "${{ secrets.DOCKER_REPO_USERNAME }}"
           docker-repo-password: "${{ secrets.DOCKER_REPO_PASSWORD }}"
-          chart-git: "https://ghproxy.com/https://github.com/cryptoya/rocketmq-docker.git"
+          chart-git: "https://ghproxy.com/https://github.com/apache/rocketmq-docker.git"
           chart-branch: "master"
           chart-path: "./rocketmq-k8s-helm"
           job-id: ${{ strategy.job-index }}
