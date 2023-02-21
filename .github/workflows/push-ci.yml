@@ -110,7 +110,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: alibaba/cloud-native-test-ci-tool@v1
+      - uses: alibaba/cloud-native-test-ci-tool@7177befdd932d6e0275607826d9a70a874b3b5c7
         name: Deploy rocketmq
         with:
           action: "deploy"
@@ -143,7 +143,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: alibaba/cloud-native-test-ci-tool@v1
+      - uses: alibaba/cloud-native-test-ci-tool@7177befdd932d6e0275607826d9a70a874b3b5c7
         name: e2e test
         with:
           action: "test"
@@ -179,7 +179,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: alibaba/cloud-native-test-ci-tool@v1
+      - uses: alibaba/cloud-native-test-ci-tool@7177befdd932d6e0275607826d9a70a874b3b5c7
         name: clean
         with:
           action: "clean"
