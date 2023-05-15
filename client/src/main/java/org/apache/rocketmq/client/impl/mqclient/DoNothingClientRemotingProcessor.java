@@ -14,36 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.apache.rocketmq.client.impl.mqclient;
 
-package org.apache.rocketmq.remoting.protocol.header.filtersrv;
+import io.netty.channel.ChannelHandlerContext;
+import org.apache.rocketmq.client.impl.ClientRemotingProcessor;
+import org.apache.rocketmq.client.impl.factory.MQClientInstance;
+import org.apache.rocketmq.remoting.protocol.RemotingCommand;
 
-import org.apache.rocketmq.remoting.CommandCustomHeader;
-import org.apache.rocketmq.remoting.annotation.CFNotNull;
-import org.apache.rocketmq.remoting.exception.RemotingCommandException;
+public class DoNothingClientRemotingProcessor extends ClientRemotingProcessor {
 
-public class RegisterFilterServerResponseHeader implements CommandCustomHeader {
-    @CFNotNull
-    private String brokerName;
-    @CFNotNull
-    private long brokerId;
+    public DoNothingClientRemotingProcessor(MQClientInstance mqClientFactory) {
+        super(mqClientFactory);
+    }
 
     @Override
-    public void checkFields() throws RemotingCommandException {
-    }
-
-    public long getBrokerId() {
-        return brokerId;
-    }
-
-    public void setBrokerId(long brokerId) {
-        this.brokerId = brokerId;
-    }
-
-    public String getBrokerName() {
-        return brokerName;
-    }
-
-    public void setBrokerName(String brokerName) {
-        this.brokerName = brokerName;
+    public RemotingCommand processRequest(ChannelHandlerContext ctx, RemotingCommand request) {
+        return null;
     }
 }

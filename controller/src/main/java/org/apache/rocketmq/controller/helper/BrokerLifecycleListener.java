@@ -15,28 +15,11 @@
  * limitations under the License.
  */
 
-package org.apache.rocketmq.broker.filtersrv;
+package org.apache.rocketmq.controller.helper;
 
-
-import org.apache.rocketmq.logging.org.slf4j.Logger;
-
-public class FilterServerUtil {
-    public static void callShell(final String shellString, final Logger log) {
-        Process process = null;
-        try {
-            String[] cmdArray = splitShellString(shellString);
-            process = Runtime.getRuntime().exec(cmdArray);
-            process.waitFor();
-            log.info("CallShell: <{}> OK", shellString);
-        } catch (Throwable e) {
-            log.error("CallShell: readLine IOException, {}", shellString, e);
-        } finally {
-            if (null != process)
-                process.destroy();
-        }
-    }
-
-    private static String[] splitShellString(final String shellString) {
-        return shellString.split(" ");
-    }
+public interface BrokerLifecycleListener {
+    /**
+     * Trigger when broker inactive.
+     */
+    void onBrokerInactive(final String clusterName, final String brokerName, final Long brokerId);
 }

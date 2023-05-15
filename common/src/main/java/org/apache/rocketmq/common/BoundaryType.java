@@ -14,26 +14,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.apache.rocketmq.common;
 
-package org.apache.rocketmq.remoting.protocol.header.filtersrv;
+public enum BoundaryType {
+    /**
+     * Indicate that lower boundary is expected.
+     */
+    LOWER("lower"),
 
-import org.apache.rocketmq.remoting.CommandCustomHeader;
-import org.apache.rocketmq.remoting.annotation.CFNotNull;
-import org.apache.rocketmq.remoting.exception.RemotingCommandException;
+    /**
+     * Indicate that upper boundary is expected.
+     */
+    UPPER("upper");
 
-public class RegisterFilterServerRequestHeader implements CommandCustomHeader {
-    @CFNotNull
-    private String filterServerAddr;
+    private String name;
 
-    @Override
-    public void checkFields() throws RemotingCommandException {
+    BoundaryType(String name) {
+        this.name = name;
     }
 
-    public String getFilterServerAddr() {
-        return filterServerAddr;
+    public String getName() {
+        return name;
     }
 
-    public void setFilterServerAddr(String filterServerAddr) {
-        this.filterServerAddr = filterServerAddr;
+    public static BoundaryType getType(String name) {
+        if (BoundaryType.UPPER.getName().equalsIgnoreCase(name)) {
+            return UPPER;
+        }
+        return LOWER;
     }
 }
