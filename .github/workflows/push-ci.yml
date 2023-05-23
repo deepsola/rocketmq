@@ -149,8 +149,8 @@ jobs:
           action: "test"
           ask-config: "${{ secrets.ASK_CONFIG }}"
           test-version: "${{ matrix.version }}"
-          test-code-git: "https://ghproxy.com/https://github.com/cryptoya/rocketmq-e2e"
-          test-code-branch: "bug-20230519"
+          test-code-git: "https://ghproxy.com/https://github.com/apache/rocketmq-e2e"
+          test-code-branch: "master"
           test-code-path: java/e2e
           test-cmd: "mvn -B test"
           job-id: 0
@@ -185,8 +185,8 @@ jobs:
           action: "test"
           ask-config: "${{ secrets.ASK_CONFIG }}"
           test-version: "${{ matrix.version }}"
-          test-code-git: "https://ghproxy.com/https://github.com/cryptoya/rocketmq-e2e"
-          test-code-branch: "bug-20230519"
+          test-code-git: "https://ghproxy.com/https://github.com/apache/rocketmq-e2e"
+          test-code-branch: "master"
           test-code-path: golang
           test-cmd: |
             cd ../common &&  mvn -Prelease -DskipTests clean package -U
@@ -225,8 +225,8 @@ jobs:
           action: "test"
           ask-config: "${{ secrets.ASK_CONFIG }}"
           test-version: "${{ matrix.version }}"
-          test-code-git: "https://ghproxy.com/https://github.com/cryptoya/rocketmq-e2e"
-          test-code-branch: "bug-20230519"
+          test-code-git: "https://ghproxy.com/https://github.com/apache/rocketmq-e2e"
+          test-code-branch: "master"
           test-code-path: java/e2e-v4
           test-cmd: "mvn -B test"
           job-id: 0
