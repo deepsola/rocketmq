@@ -191,8 +191,7 @@ jobs:
           test-cmd: |
             cd ../common &&  mvn -Prelease -DskipTests clean package -U
             cd ../rocketmq-admintools && source bin/env.sh
-            go get -u github.com/apache/rocketmq-clients/golang
-            cd ../golang && gotestsum --junitfile ./target/surefire-reports/TEST-report.xml ./mqgotest/... -timeout 2m  -v
+            cd ../golang && go get -u github.com/apache/rocketmq-clients/golang && gotestsum --junitfile ./target/surefire-reports/TEST-report.xml ./mqgotest/... -timeout 2m  -v
           job-id: 0
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3
