@@ -110,7 +110,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: deepsola/rocketmq-test-tool@31649520c304773a00c2609cccc025c3afd741a5
+      - uses: deepsola/rocketmq-test-tool@086d2ea027af64ad98b0fe87041db983624b999f
         name: Deploy rocketmq
         with:
           action: "deploy"
@@ -143,7 +143,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: deepsola/rocketmq-test-tool@31649520c304773a00c2609cccc025c3afd741a5
+      - uses: deepsola/rocketmq-test-tool@086d2ea027af64ad98b0fe87041db983624b999f
         name: e2e test
         with:
           action: "test"
@@ -179,7 +179,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: deepsola/rocketmq-test-tool@31649520c304773a00c2609cccc025c3afd741a5
+      - uses: deepsola/rocketmq-test-tool@086d2ea027af64ad98b0fe87041db983624b999f
         name: e2e test
         with:
           action: "test"
@@ -218,7 +218,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: deepsola/rocketmq-test-tool@31649520c304773a00c2609cccc025c3afd741a5
+      - uses: deepsola/rocketmq-test-tool@086d2ea027af64ad98b0fe87041db983624b999f
         name: e2e test
         with:
           action: "test"
@@ -254,7 +254,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: deepsola/rocketmq-test-tool@31649520c304773a00c2609cccc025c3afd741a5
+      - uses: deepsola/rocketmq-test-tool@086d2ea027af64ad98b0fe87041db983624b999f
         name: clean
         with:
           action: "clean"
