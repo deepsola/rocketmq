@@ -114,7 +114,7 @@ jobs:
         name: Deploy rocketmq
         with:
           action: "deploy"
-          ask-config: "${{ secrets.ASK_CONFIG }}"
+          ask-config: "${{ secrets.ASK_CONFIG_VIRGINA }}"
           test-version: "${{ matrix.version }}"
           chart-git: "https://ghproxy.com/https://github.com/apache/rocketmq-docker.git"
           chart-branch: "master"
@@ -147,7 +147,7 @@ jobs:
         name: e2e test
         with:
           action: "test"
-          ask-config: "${{ secrets.ASK_CONFIG }}"
+          ask-config: "${{ secrets.ASK_CONFIG_VIRGINA }}"
           test-version: "${{ matrix.version }}"
           test-code-git: "https://ghproxy.com/https://github.com/apache/rocketmq-e2e"
           test-code-branch: "master"
@@ -183,7 +183,7 @@ jobs:
         name: e2e test
         with:
           action: "test"
-          ask-config: "${{ secrets.ASK_CONFIG }}"
+          ask-config: "${{ secrets.ASK_CONFIG_VIRGINA }}"
           test-version: "${{ matrix.version }}"
           test-code-git: "https://ghproxy.com/https://github.com/apache/rocketmq-e2e"
           test-code-branch: "master"
@@ -222,7 +222,7 @@ jobs:
         name: e2e test
         with:
           action: "test"
-          ask-config: "${{ secrets.ASK_CONFIG }}"
+          ask-config: "${{ secrets.ASK_CONFIG_VIRGINA }}"
           test-version: "${{ matrix.version }}"
           test-code-git: "https://ghproxy.com/https://github.com/apache/rocketmq-e2e"
           test-code-branch: "master"
@@ -258,7 +258,7 @@ jobs:
         name: clean
         with:
           action: "clean"
-          ask-config: "${{ secrets.ASK_CONFIG }}"
+          ask-config: "${{ secrets.ASK_CONFIG_VIRGINA }}"
           test-version: "${{ matrix.version }}"
           job-id: ${{ strategy.job-index }}
           
