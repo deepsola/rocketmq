@@ -110,7 +110,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: apache/rocketmq-test-tool@7d84d276ad7755b1dc5cf9657a7a9bff6ae6d288
+      - uses: deepsola/rocketmq-test-tool@32b0be8f620196424a79a973105eefd535b26e78
         name: Deploy rocketmq
         with:
           action: "deploy"
@@ -143,7 +143,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: apache/rocketmq-test-tool@7d84d276ad7755b1dc5cf9657a7a9bff6ae6d288
+      - uses: deepsola/rocketmq-test-tool@32b0be8f620196424a79a973105eefd535b26e78
         name: e2e test
         with:
           action: "test"
@@ -179,7 +179,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: apache/rocketmq-test-tool@7d84d276ad7755b1dc5cf9657a7a9bff6ae6d288
+      - uses: deepsola/rocketmq-test-tool@32b0be8f620196424a79a973105eefd535b26e78
         name: e2e test
         with:
           action: "test"
@@ -218,7 +218,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: apache/rocketmq-test-tool@7d84d276ad7755b1dc5cf9657a7a9bff6ae6d288
+      - uses: deepsola/rocketmq-test-tool@32b0be8f620196424a79a973105eefd535b26e78
         name: e2e test
         with:
           action: "test"
@@ -246,7 +246,7 @@ jobs:
           
   test-e2e-csharp:
     if: ${{ success() }}
-    name: Test E2E remoting csharp
+    name: Test E2E csharp
     needs: [ list-version, deploy ]
     runs-on: ubuntu-latest
     timeout-minutes: 60
@@ -254,7 +254,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: apache/rocketmq-test-tool@7d84d276ad7755b1dc5cf9657a7a9bff6ae6d288
+      - uses: deepsola/rocketmq-test-tool@32b0be8f620196424a79a973105eefd535b26e78
         name: e2e test
         with:
           action: "test"
@@ -292,7 +292,7 @@ jobs:
       matrix:
         version: ${{ fromJSON(needs.list-version.outputs.version-json) }}
     steps:
-      - uses: apache/rocketmq-test-tool@7d84d276ad7755b1dc5cf9657a7a9bff6ae6d288
+      - uses: deepsola/rocketmq-test-tool@32b0be8f620196424a79a973105eefd535b26e78
         name: clean
         with:
           action: "clean"
