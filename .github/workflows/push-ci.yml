@@ -266,7 +266,7 @@ jobs:
           test-cmd: |
             cd ../common &&  mvn -Prelease -DskipTests clean package -U
             cd ../rocketmq-admintools && source bin/env.sh
-            cd ../csharp/rocketmq-client-csharp-tests/ && dotnet test --logger:"junit;LogFilePath=./target/surefire-reports/TEST-result.xml" -l "console;verbosity=detailed"
+            cd ../csharp/rocketmq-client-csharp-tests/ && dotnet test --logger:"junit;LogFilePath=../target/surefire-reports/TEST-result.xml" -l "console;verbosity=detailed"
           job-id: 0
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3
